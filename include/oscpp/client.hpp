@@ -345,9 +345,10 @@ public:
     {}
 
 private:
-    typedef typename std::aligned_storage<buffer_size, kAlignment>::type
-                  AlignedBuffer;
-    AlignedBuffer m_buffer;
+    // typedef typename std::aligned_storage<buffer_size, kAlignment>::type
+    //               AlignedBuffer;
+    // AlignedBuffer m_buffer;
+    alignas(kAlignment) std::byte m_buffer[buffer_size];
 };
 
 class DynamicPacket : public Packet

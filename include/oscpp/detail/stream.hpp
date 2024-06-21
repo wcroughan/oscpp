@@ -153,6 +153,8 @@ public:
     : Stream(stream)
     {}
 
+    BasicWriteStream& operator=(const BasicWriteStream&) = default;
+
     BasicWriteStream(const BasicWriteStream& stream, size_t size)
     : Stream(stream, size)
     {}
@@ -256,6 +258,8 @@ public:
     BasicReadStream(const BasicReadStream& stream)
     : Stream(stream)
     {}
+
+    BasicReadStream& operator=(const BasicReadStream&) = default;
 
     BasicReadStream(const BasicReadStream& stream, size_t size)
     : Stream(stream, size)
